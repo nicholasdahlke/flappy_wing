@@ -29,13 +29,4 @@ actions
 		rot4
 	);
 	}
-	
-//	{
-//	name rotatingZone;
-//	type cellSet;
-//	action new;
-//	source setToCellZone;
-//	set rot_temp;
-//	}
-		
 );

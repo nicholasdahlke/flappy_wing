@@ -1,0 +1,4 @@
+#!/bin/bash
+rm -r constant/polyMesh
+rm -r outer_mesh/constant/polyMesh
+rm -r inner_mesh/constant/polyMesh

@@ -49,11 +49,15 @@ int main(int argc, char *argv[])
     #include "createMesh.H"
 
     // Read end time of the table from control dict
-    const scalar endTime = runTime.controlDict().get<scalar>("endTime");
+    scalar endTime = runTime.controlDict().get<scalar>("endTime");
 
 
     // Read deltaT from control dict
     const scalar deltaT = runTime.controlDict().get<scalar>("deltaT");
+
+    //Increase the end time a bit to avoid issues with the moving mesh solver
+    endTime += deltaT;
+
 
     // Number of entries in the table
     const label nTimes = endTime / deltaT;
@@ -90,8 +94,8 @@ int main(int argc, char *argv[])
         timeValues[i].second()[1] = vector
         (
             0,
-            0,
-            rotAmp*Foam::sin(2*constant::mathematical::pi*rotFrequ*t)
+            rotAmp*Foam::sin(2*constant::mathematical::pi*rotFrequ*t),
+            0
         );
     }
 

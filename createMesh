@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Create the inner mesh and refine the wall layer
+blockMesh -case inner_mesh
+refineWallLayer -case inner_mesh -overwrite airfoil 0.7
+refineWallLayer -case inner_mesh -overwrite airfoil 0.7
+refineWallLayer -case inner_mesh -overwrite airfoil 0.7
+refineWallLayer -case inner_mesh -overwrite airfoil 0.6
+refineWallLayer -case inner_mesh -overwrite airfoil 0.5
+
+# Creating the rotating zone, by merging multiple cell zones
+topoSet -case inner_mesh -constant
+setsToZones -case inner_mesh -constant
+
+# Create the outer mesh
+blockMesh -case outer_mesh
+
+# Merge the two meshes
+mergeMeshes -overwrite outer_mesh inner_mesh
+
+# Copy the resulting mesh to the main case
+cp -r outer_mesh/constant/polyMesh constant/
+
+# Creating the rotating zone, by merging multiple cell zones
+topoSet  -constant
+setsToZones -constant
+
+# Create the correct patchtypes
+createPatch -overwrite
+
+# Generate the movement data
+gen6DoF

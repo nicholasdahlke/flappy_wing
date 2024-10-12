@@ -23,7 +23,7 @@ motionSolver    solidBody;
 cellZone        rotatingZone;
 
 solidBodyMotionFunction  tabulated6DoFMotion;
-CofG (1.05 0.5 0.5);
+CofG (0.0125 0.1 0);
 timeDataFileName "$FOAM_CASE/constant/6DoF.dat";
 // ************************************************************************* //
 

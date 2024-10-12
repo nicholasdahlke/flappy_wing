@@ -1,0 +1,2 @@
+#!/bin/bash
+ls | grep -P "^\d+.\d+$" | xargs -d"\n" rm -r

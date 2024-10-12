@@ -43,10 +43,10 @@ vertices
 blocks
 (
     hex (0 1 5 4 3 2 6 7) rot1 (25 50 50) simpleGrading (1 1 0.6)
-    hex (8 10 11 9 2 3 7 6) rot2 (25 50 15) simpleGrading (1 1 1)
+    hex (8 10 11 9 2 3 7 6) rot2 (25 50 5) simpleGrading (1 1 1)
     
     hex (4 5 1 0 15 14 12 13) rot3 (25 50 50) simpleGrading (1 1 0.6)
-    hex (9 11 10 8 14 15 13 12) rot4 (25 50 15) simpleGrading (1 1 1)
+    hex (9 11 10 8 14 15 13 12) rot4 (25 50 5) simpleGrading (1 1 1)
     
 );
 
