@@ -33,20 +33,16 @@ boundaryField
 	value		$internalField;
     }
     
-    sides
+    "(sides|top_bottom|inner)"
     {
         type            zeroGradient;
     }
-    
-    top_bottom
-    {
-      type zeroGradient;
-    }
+
     
     airfoil
     {
         type            nutUSpaldingWallFunction;
-	value		$internalField;
+		value	$internalField;
     }
     
     AMI1

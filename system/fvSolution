@@ -18,8 +18,8 @@ solvers
 {
     p
     {
-        solver          GAMG;
-        smoother        DICGaussSeidel;
+        solver          PCG;
+        preconditioner  DIC;
         tolerance       0;
         relTol          0.01;
     }
@@ -66,11 +66,10 @@ solvers
 
 PIMPLE
 {
-    nOuterCorrectors    3;
-    nCOrrectors         1;
+    nOuterCorrectors    10;
+    nCorrectors         1;
     nNonOrthogonalCorrectors 0;
 }
-
 
 
 // ************************************************************************* //

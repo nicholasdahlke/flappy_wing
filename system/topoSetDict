@@ -23,10 +23,10 @@ actions
 	source zoneToCell;
 	zones
 	(
-		rot1
-		rot2
-		rot3
-		rot4
+		b1
+		b2
+		b3
+		b4
 	);
 	}
 );

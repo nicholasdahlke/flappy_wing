@@ -1,0 +1,5 @@
+#!/bin/bash
+decomposePar
+mpirun --use-hwthread-cpus -np 24 pimpleFoam -parallel
+reconstructPar
+rm -r processor*

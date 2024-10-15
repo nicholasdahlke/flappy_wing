@@ -8,10 +8,6 @@ refineWallLayer -case inner_mesh -overwrite airfoil 0.7
 refineWallLayer -case inner_mesh -overwrite airfoil 0.6
 refineWallLayer -case inner_mesh -overwrite airfoil 0.5
 
-# Creating the rotating zone, by merging multiple cell zones
-topoSet -case inner_mesh -constant
-setsToZones -case inner_mesh -constant
-
 # Create the outer mesh
 blockMesh -case outer_mesh
 

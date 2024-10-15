@@ -22,9 +22,9 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         0.05;
+endTime         0.025;
 
-deltaT          1e-3;
+deltaT          5e-5;
 
 writeControl    timeStep;
 
@@ -44,5 +44,16 @@ timePrecision   6;
 
 runTimeModifiable true;
 
+functions
+{
+    Co1
+    {
+        type                CourantNo;
+        libs                ("libfieldFunctionObjects.so");
+        executeControl      timeStep;
+        executeInterval     2;
+        writeControl        writeTime;
+    }
+}
 
 // ************************************************************************* //
